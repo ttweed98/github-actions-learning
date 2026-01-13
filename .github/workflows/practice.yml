@@ -26,3 +26,8 @@ jobs:
         run: echo "Hello, $MY_NAME!"
       - name: Use a job-level variable
         run: echo "$GREETING"
+  second_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: This is the second job
+        run: echo "Running in a completely separate runner!"
