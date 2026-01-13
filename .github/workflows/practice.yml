@@ -32,3 +32,7 @@ jobs:
     steps:
       - name: This is the second job
         run: echo "Running in a completely separate runner!"
+      - name: Use a secret
+        run: echo "The secret length is ${#MY_SECRET} characters"
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
