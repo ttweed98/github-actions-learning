@@ -1,0 +1,26 @@
+name: Practice workflow
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  practice-job:
+    runs-on: ubuntu-latest
+    env:
+      GREETING: "Welcome to Github Actions!"
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+      - name: List the files
+        run: ls -la
+      - name: Run Multiple commands
+        run: |
+          echo "First Command"
+          echo "Second Command"
+          pwd
+      - name: Use an environemt variable
+        env:
+          MY_NAME: Tony
+        run: echo "Hello, $MY_NAME!"
+      - name: Use a job-level variable
+        run: echo "$GREETING"
