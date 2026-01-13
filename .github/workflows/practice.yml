@@ -27,6 +27,7 @@ jobs:
       - name: Use a job-level variable
         run: echo "$GREETING"
   second_job:
+    needs: practice-job
     runs-on: ubuntu-latest
     steps:
       - name: This is the second job
